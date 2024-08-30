@@ -11,6 +11,7 @@
     <div class="container">
         <?php
         if(isset($_POST["submit"])){
+
             $fullname = $_POST["fullname"];
             $email = $_POST["email"];
             $pin = $_POST["pin"];
@@ -49,10 +50,10 @@
 
             if(count($errors)>0){
                 foreach ($errors as $error){
-                    echo "<div class='alert alert-danger'>$error</div>";
+                    echo "<div class='alert alert-danger custom-alert'>$error</div>";
                 }
             }else{
-          
+        
             $sql = "INSERT INTO users (full_name, email, password) VALUES ('$fullname', '$email', '$password_hash')";
 
             // Execute the query
